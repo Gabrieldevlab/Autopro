@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --orange: #ff6b2b;
+  --orange2: #ff8c52;
+}
+
+body {
+  background: #08080f;
+  color: #eeeef8;
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #353540; border-radius: 4px; }
+
+/* Input base */
+.input-base {
+  @apply w-full bg-[#18181f] border border-[#252530] rounded-[10px] px-4 py-2.5 text-[#eeeef8] text-sm outline-none transition-all;
+}
+.input-base:focus {
+  @apply border-[#ff6b2b] bg-[#202028];
+}
+
+/* Button base */
+.btn-primary {
+  @apply inline-flex items-center gap-1.5 px-4 py-2 rounded-[10px] bg-[#ff6b2b] text-white text-sm font-medium transition-all hover:bg-[#ff8c52] active:scale-[.98];
+}
+.btn-ghost {
+  @apply inline-flex items-center gap-1.5 px-4 py-2 rounded-[10px] border border-[#252530] text-[#9090b0] text-sm font-medium transition-all hover:border-[#353540] hover:text-[#eeeef8] active:scale-[.98];
+}
+.btn-danger {
+  @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-red-500/10 text-red-400 border border-red-500/20 text-sm font-medium transition-all hover:bg-red-500/20;
+}
+.btn-success {
+  @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-green-500/10 text-green-400 border border-green-500/20 text-sm font-medium transition-all hover:bg-green-500/20;
+}
+.btn-yellow {
+  @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 text-sm font-medium transition-all hover:bg-yellow-500/20;
+}
+
+/* Card */
+.card {
+  @apply bg-[#111118] border border-[#252530] rounded-2xl p-5;
+}
+.card-sm {
+  @apply bg-[#111118] border border-[#252530] rounded-2xl p-4;
+}
+
+/* Badge */
+.badge-orange { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-500/10 text-orange-400 border border-orange-500/25; }
+.badge-green  { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-500/10 text-green-400 border border-green-500/25; }
+.badge-blue   { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/25; }
+.badge-red    { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-500/10 text-red-400 border border-red-500/25; }
+.badge-yellow { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-yellow-500/10 text-yellow-400 border border-yellow-500/25; }
+.badge-gray   { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-white/5 text-[#9090b0] border border-white/10; }
+
+/* Sidebar nav item */
+.nav-item {
+  @apply flex items-center gap-2.5 px-3 py-2 mx-1.5 rounded-[10px] cursor-pointer transition-all text-sm text-[#9090b0] hover:bg-[#18181f] hover:text-[#eeeef8];
+}
+.nav-item.active {
+  @apply bg-orange-500/10 text-[#ff6b2b] border border-orange-500/25;
+}
+
+/* Table */
+.table-th { @apply text-left text-xs text-[#505068] font-semibold px-3 py-2.5 border-b border-[#252530] uppercase tracking-wider; }
+.table-td { @apply px-3 py-3 border-b border-[#252530] text-sm align-middle; }
