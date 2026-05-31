@@ -139,3 +139,11 @@ create policy "notifs_workshop" on notifications
 -- create policy "logos_public" on storage.objects for select using (bucket_id = 'logos');
 -- create policy "logos_upload" on storage.objects for insert with check (bucket_id = 'logos' and auth.uid() is not null);
 -- create policy "logos_update" on storage.objects for update using (bucket_id = 'logos' and auth.uid() is not null);
+
+-- =======================================================
+--  MIGRACAO: adicionar forma de pagamento nas OS
+--  Execute no SQL Editor do Supabase se o banco ja existe
+-- =======================================================
+alter table orders
+  add column if not exists payment_method text
+  check (payment_method in ('pix','credit','debit','cash'));
